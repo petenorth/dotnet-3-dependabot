@@ -11,7 +11,7 @@ COPY . .
 RUN dotnet publish -c release -o /app -r linux-musl-x64 --self-contained false --no-restore
 
 # final stage/image
-FROM mcr.microsoft.com/dotnet/runtime:5.0.4-alpine3.13
+FROM mcr.microsoft.com/dotnet/runtime:5.0.5-alpine3.13
 WORKDIR /app
 COPY --from=build /app .
 
